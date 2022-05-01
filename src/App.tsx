@@ -1,13 +1,12 @@
 import React from 'react';
 import './App.css';
-import Store from "./components/Store";
-import PitsBoard from "./components/PitsBoard";
 import Board from "./components/Board";
+import GameMeta from "./components/GameMeta";
 
 function App() {
     return (
         <div>
-            Mancala FE
+            <GameMeta/>
             <Board/>
         </div>
     );
