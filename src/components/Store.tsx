@@ -1,11 +1,13 @@
 import styles from './Store.module.css'
 
 const Store = () => {
-    return <div className={styles.store}>
-        <div className={styles.storage}>
-            Store
+    return (
+        <div className={styles.store}>
+            <div className={styles.data}>
+                Store
+            </div>
         </div>
-    </div>
+    )
 }
 
 export default Store;
