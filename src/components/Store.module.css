@@ -1,4 +1,7 @@
 .store {
     display: inline-block;
     background-color: green;
+    width: 6rem;
+    height: 15rem;
+    margin: 0.5rem;
 }
