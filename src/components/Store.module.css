@@ -1,7 +1,13 @@
 .store {
-    display: inline-block;
+    display: flex;
     background-color: green;
     width: 6rem;
-    height: 15rem;
+    height: 16rem;
+    margin: 1rem;
+}
+
+.store .storage {
     margin: 0.5rem;
+    background-color: aqua;
+    width: 100%;
 }

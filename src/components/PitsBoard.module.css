@@ -1,4 +1,6 @@
 .pitsBoard {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     background-color: yellow;
+    margin: 1rem;
 }
