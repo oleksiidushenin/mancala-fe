@@ -10,6 +10,7 @@ const Pits = (props: { isFirstPlayer: boolean, pits: [number, number][] }) => {
                 key={pit[0]}
                 index={pit[0]}
                 amount={pit[1]}
+                isFirstPlayer={props.isFirstPlayer}
             />
         )}
     </div>

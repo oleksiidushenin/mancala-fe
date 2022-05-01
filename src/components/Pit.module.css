@@ -1,11 +1,27 @@
 .pit {
     display: flex;
     flex: 1;
-    background-color: red;
     width: 6rem;
     height: 6rem;
     border-radius: 50%;
     margin: 0.5rem;
     justify-content: center;
     align-items: center;
+}
+
+.pit.firstPlayer {
+    background-color: red;
+}
+
+.pit.secondPlayer {
+    background-color: darkcyan;
+}
+
+.pit.active:hover {
+    background-color: blanchedalmond;
+    cursor: pointer;
+}
+
+.pit.passive:hover {
+    cursor: default;
 }

@@ -10,12 +10,18 @@ const Board = () => {
 
     return (
         <div className={styles.board}>
-            <Store amount={game.getFirstStoreValue()}/>
+            <Store
+                isFirstPlayer={false}
+                amount={game.getFirstStoreValue()}
+            />
             <PitsBoard
                 firstPlayerPits={game.getFirstPlayerPits()}
                 secondPlayerPits={game.getSecondPlayerPits()}
             />
-            <Store amount={game.getSecondStoreValue()}/>
+            <Store
+                isFirstPlayer={true}
+                amount={game.getSecondStoreValue()}
+            />
         </div>
     )
 }

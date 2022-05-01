@@ -1,6 +1,6 @@
 .store {
     display: flex;
-    background-color: green;
+    background-color: transparent;
     width: 7rem;
     height: 16rem;
     margin: 1rem 0;
@@ -8,7 +8,7 @@
     align-items: center;
 }
 
-.store .data {
+.storeData {
     display: flex;
     background-color: aqua;
     width: 100%;
@@ -16,4 +16,12 @@
     border-radius: 2.5rem;
     justify-content: center;
     align-items: center;
+}
+
+.firstPlayer {
+    background-color: red;
+}
+
+.secondPlayer {
+    background-color: darkcyan;
 }

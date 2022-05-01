@@ -7,9 +7,6 @@ const GameMeta = () => {
 
     const startGameHandler = () => {
         gameContext.resetGame();
-
-
-        console.log('Game started!!!')
     }
 
     return (

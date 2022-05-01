@@ -5,15 +5,19 @@ import Game from "../domain/Game";
 const GameProvider = (props: { children: React.ReactNode | null }) => {
     const [game, setGame] = useState<Game>(new Game());
 
-
     const resetGameHandler = () => {
         setGame(new Game());
         console.log("Context. Reset Game");
     }
 
+    const selectPitHandler = (index: number) => {
+        console.log("Context. Index is selected" + index);
+    }
+
     const gameContext: GameContextType = {
         game: game,
-        resetGame: resetGameHandler
+        resetGame: resetGameHandler,
+        selectPit: selectPitHandler
     }
 
     return (
