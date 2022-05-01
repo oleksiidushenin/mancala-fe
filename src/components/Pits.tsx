@@ -1,14 +1,17 @@
 import styles from './Pits.module.css'
 import Pit from "./Pit";
 
-const Pits = (props: {amounts: number[]}) => {
+const Pits = (props: { isFirstPlayer: boolean, pits: [number, number][] }) => {
+    const targetPits = props.isFirstPlayer ? props.pits : props.pits.slice().reverse();
+
     return <div className={styles.pits}>
-        <Pit amount={props.amounts[0]}/>
-        <Pit amount={props.amounts[1]}/>
-        <Pit amount={props.amounts[2]}/>
-        <Pit amount={props.amounts[3]}/>
-        <Pit amount={props.amounts[4]}/>
-        <Pit amount={props.amounts[5]}/>
+        {targetPits.map(pit =>
+            <Pit
+                key={pit[0]}
+                index={pit[0]}
+                amount={pit[1]}
+            />
+        )}
     </div>
 }
 

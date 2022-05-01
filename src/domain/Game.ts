@@ -19,20 +19,30 @@ class Game {
         console.log("Game initialized");
     }
 
-    getFirstStoreValue() : number {
+    getFirstStoreValue(): number {
         return this.board[this.firstStoreIndex];
     }
 
-    getSecondStoreValue() : number {
+    getSecondStoreValue(): number {
         return this.board[this.secondStoreIndex];
     }
 
-    getFirstPlayerPits() : number[] {
-        return this.board.slice(0, this.firstStoreIndex);
+    getFirstPlayerPits(): [number, number][] {
+        let result: [number, number][] = [];
+        for (let i = 0; i < this.firstStoreIndex; i++) {
+            result.push([i, this.board[i]]);
+        }
+
+        return result
     }
 
-    getSecondPlayerPits() : number[] {
-        return this.board.slice(this.firstStoreIndex + 1, this.secondStoreIndex);
+    getSecondPlayerPits(): [number, number][] {
+        let result: [number, number][] = [];
+        for (let i = this.firstStoreIndex + 1; i < this.secondStoreIndex; i++) {
+            result.push([i, this.board[i]]);
+        }
+
+        return result
     }
 
 }
