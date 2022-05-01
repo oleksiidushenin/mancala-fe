@@ -1,10 +1,10 @@
 import styles from './Store.module.css'
 
-const Store = () => {
+const Store = (props: { amount: number }) => {
     return (
         <div className={styles.store}>
             <div className={styles.data}>
-                Store
+                {props.amount}
             </div>
         </div>
     )

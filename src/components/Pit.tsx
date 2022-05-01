@@ -1,7 +1,11 @@
 import styles from './Pit.module.css'
 
-const Pit = () => {
-    return <div className={styles.pit}>Pit</div>
+const Pit = (props: { amount: number }) => {
+    return (
+        <div className={styles.pit}>
+            {props.amount}
+        </div>
+    )
 }
 
 export default Pit;
