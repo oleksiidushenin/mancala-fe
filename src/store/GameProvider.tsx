@@ -12,6 +12,8 @@ const GameProvider = (props: { children: React.ReactNode | null }) => {
 
     const selectPitHandler = (index: number) => {
         console.log("Context. Index is selected" + index);
+
+        throw new Error("Unexpected error occurs");
     }
 
     const gameContext: GameContextType = {

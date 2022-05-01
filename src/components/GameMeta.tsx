@@ -1,12 +1,15 @@
 import styles from './GameMeta.module.css'
 import {useContext} from "react";
 import GameContext from "../store/game-context";
+import {ErrorContext} from "../store/ErrorProvider";
 
 const GameMeta = () => {
     const gameContext = useContext(GameContext);
+    const errorContext = useContext(ErrorContext);
 
     const startGameHandler = () => {
         gameContext.resetGame();
+        errorContext.setGameException(false, "");
     }
 
     return (

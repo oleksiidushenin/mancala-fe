@@ -1,15 +1,14 @@
 import React from 'react';
 import './App.css';
-import Board from "./components/Board";
-import GameMeta from "./components/GameMeta";
-import GameProvider from "./store/GameProvider";
+import Mancala from "./components/Mancala";
+import ErrorProvider from "./store/ErrorProvider";
 
 function App() {
     return (
-        <GameProvider>
-            <GameMeta/>
-            <Board/>
-        </GameProvider>
+        <ErrorProvider>
+            <Mancala/>
+        </ErrorProvider>
+
     );
 }
 

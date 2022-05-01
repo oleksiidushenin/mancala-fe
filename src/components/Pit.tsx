@@ -1,9 +1,11 @@
 import styles from './Pit.module.css'
 import {useContext} from "react";
 import GameContext from "../store/game-context";
+import {ErrorContext} from "../store/ErrorProvider";
 
 const Pit = (props: { index: number, amount: number, isFirstPlayer: boolean }) => {
     const gameContext = useContext(GameContext);
+    const errorContext = useContext(ErrorContext);
     const isActive = props.isFirstPlayer === gameContext.game.firstPlayerTurn && props.amount > 0;
 
     const selectPitHandler = () => {
@@ -11,7 +13,12 @@ const Pit = (props: { index: number, amount: number, isFirstPlayer: boolean }) =
             return;
         }
 
-        gameContext.selectPit(props.index);
+        try {
+            gameContext.selectPit(props.index);
+        } catch (error: any) {
+            console.log("Game error")
+            errorContext.setGameException(true, error.message);
+        }
     }
 
     const pitStyles = [
