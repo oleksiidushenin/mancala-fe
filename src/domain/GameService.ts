@@ -63,17 +63,6 @@ export const selectPit = (index: number, game: Game): Game => {
         newGame.board[targetPit++]++;
     }
 
-
-    if (isEnd(newGame)) {
-        newGame.finished = true;
-        newGame.winner = newGame.board[firstStoreIndex] > newGame.board[secondStoreIndex] ? "First Player" : "Second Player";
-        newGame.winner += '. Score: ';
-        newGame.winner += newGame.board[firstStoreIndex];
-        newGame.winner += ' : ';
-        newGame.winner += newGame.board[secondStoreIndex];
-        return newGame;
-    }
-
     const currentPitIndex = targetPit - 1;
     const activePlayerStoreIndex = getActivePlayerStoreIndex(newGame);
 
@@ -83,13 +72,19 @@ export const selectPit = (index: number, game: Game): Game => {
         newGame.board[activePlayerStoreIndex] += newGame.board[currentPitIndex];
         newGame.board[oppositePitIndex] = 0;
         newGame.board[currentPitIndex] = 0;
-        newGame.firstPlayerTurn = !newGame.firstPlayerTurn;
-        return newGame;
     }
 
     if (activePlayerStoreIndex !== currentPitIndex) {
         newGame.firstPlayerTurn = !newGame.firstPlayerTurn;
-        return newGame;
+    }
+
+    if (isEnd(newGame)) {
+        newGame.finished = true;
+        newGame.winner = newGame.board[firstStoreIndex] > newGame.board[secondStoreIndex] ? "First Player" : "Second Player";
+        newGame.winner += '. Score: ';
+        newGame.winner += newGame.board[firstStoreIndex];
+        newGame.winner += ' : ';
+        newGame.winner += newGame.board[secondStoreIndex];
     }
 
     return newGame;
