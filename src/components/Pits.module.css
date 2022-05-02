@@ -1,6 +1,23 @@
 .pits {
-    background-color: blue;
+    background-color: #313c5d;
     display: flex;
     margin: 0.5rem;
-    border-radius: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+}
+
+.pits.firstPlayer {
+    background-color:#282828;
+    color: #dfee06;
+    font-size: 2rem;
+    border-color: #dfee06;
+    box-shadow: 0 1px 8px #dfee06;
+}
+
+.pits.secondPlayer {
+    background-color: #dfee06;
+    color: #282828;
+    font-size: 2rem;
+    border-color: #282828;
+    box-shadow: 0 1px 8px #282828;
 }

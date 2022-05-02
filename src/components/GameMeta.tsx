@@ -6,6 +6,12 @@ import {ErrorContext} from "../store/ErrorProvider";
 const GameMeta = () => {
     const gameContext = useContext(GameContext);
     const errorContext = useContext(ErrorContext);
+    const isFinished = gameContext.game.finished;
+    const activePlayer = gameContext.game.firstPlayerTurn ? 'First Player' : 'Second Player';
+    const gameStatusStyle = isFinished
+        ? styles.finished
+        : gameContext.game.firstPlayerTurn ? styles.firstPlayerActive : styles.secondPlayerActive;
+    const winner = gameContext.game.winner;
 
     const startGameHandler = () => {
         gameContext.resetGame();
@@ -14,10 +20,16 @@ const GameMeta = () => {
 
     return (
         <div className={styles.gameMeta}>
-            <p>Mancala</p>
-            <button type={"button"} onClick={startGameHandler}>Reset Game</button>
-            <p>Next move: Dog</p>
-            <p>Winner: Cat</p>
+            <div>
+                <h1>Mancala</h1>
+            </div>
+            <div>
+                <button className={styles.gameMetaButton} type={"button"} onClick={startGameHandler}>Reset Game</button>
+            </div>
+            <div className={gameStatusStyle}>
+                {!isFinished && <p>Next move: {activePlayer}</p>}
+                {isFinished && <p>WINNER: {winner}</p>}
+            </div>
         </div>
     )
 }

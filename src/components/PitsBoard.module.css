@@ -1,7 +1,9 @@
 .pitsBoard {
     display: flex;
     flex-direction: column;
-    background-color: yellow;
+    background-color: #71781c;
     margin: 1rem;
-    border-radius: 1rem;
+    border-color: #282828;
+    box-shadow: 0 1px 8px #282828;
+    border-radius: 8px;
 }

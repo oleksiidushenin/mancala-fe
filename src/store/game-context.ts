@@ -1,5 +1,6 @@
 import React from "react";
 import Game from "../domain/Game"
+import {createGame} from "../domain/GameService";
 
 export type GameContextType = {
     game: Game;
@@ -8,7 +9,7 @@ export type GameContextType = {
 }
 
 const GameContext = React.createContext<GameContextType>({
-    game: new Game(),
+    game: createGame(),
     resetGame: () => {
     },
     selectPit: (number) => {

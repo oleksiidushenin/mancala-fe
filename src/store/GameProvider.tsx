@@ -1,19 +1,20 @@
 import GameContext, {GameContextType} from "./game-context";
 import React, {useState} from "react";
 import Game from "../domain/Game";
+import {createGame, selectPit} from "../domain/GameService"
 
 const GameProvider = (props: { children: React.ReactNode | null }) => {
-    const [game, setGame] = useState<Game>(new Game());
+    const [game, setGame] = useState<Game>(createGame);
 
     const resetGameHandler = () => {
-        setGame(new Game());
+        setGame(createGame());
         console.log("Context. Reset Game");
     }
 
     const selectPitHandler = (index: number) => {
-        console.log("Context. Index is selected" + index);
-
-        throw new Error("Unexpected error occurs");
+        setGame(prevGame => {
+            return selectPit(index, prevGame);
+        })
     }
 
     const gameContext: GameContextType = {

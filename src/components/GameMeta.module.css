@@ -1,5 +1,79 @@
 .gameMeta {
     text-align: center;
-    background-color: blueviolet;
-    margin: 5rem;
+    justify-content: center;
+    background-color: transparent;
+    margin:auto;
+    width: 20rem;
+}
+
+h1 {
+    background-color: #8c9418;
+    color: #252c04;
+    height: 3rem;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    border-color: #282828;
+    box-shadow: 0 1px 8px #282828;
+}
+
+.gameMetaButton {
+    width: 100%;
+    font-size: 1.5rem;
+    background-color: #fecd45;
+    color: #252c04;
+    height: 3rem;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    border-color: #fecd45;
+    box-shadow: 0 1px 8px #282828;
+}
+
+.gameMetaButton:hover {
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.5rem;
+    background-color: #252c04;
+    color: #fecd45;
+    height: 3rem;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    border-color: #fecd45;
+    box-shadow: 0 1px 8px #282828;
+}
+
+.firstPlayerActive {
+    background-color: #282828;
+    color: #dfee06;
+    height: 3rem;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    border-color: #dfee06;
+    box-shadow: 0 1px 8px #dfee06;
+}
+
+.secondPlayerActive {
+    background-color: #dfee06;
+    color: #282828;
+    height: 3rem;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    border-color: #282828;
+    box-shadow: 0 1px 8px #282828;
+}
+
+.finished {
+    background-color: #54ef48;
+    color: #282828;
+    font-weight: bold;
+    height: 3rem;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    border-color: #ee197f;
+    box-shadow: 0 1px 8px #ee197f;
 }

@@ -3,6 +3,7 @@ import Store from "./Store";
 import PitsBoard from "./PitsBoard";
 import {useContext} from "react";
 import GameContext from "../store/game-context";
+import {getFirstPlayerPits, getFirstStoreValue, getSecondPlayerPits, getSecondStoreValue} from "../domain/GameService";
 
 const Board = () => {
     const gameContext = useContext(GameContext);
@@ -12,15 +13,15 @@ const Board = () => {
         <div className={styles.board}>
             <Store
                 isFirstPlayer={false}
-                amount={game.getFirstStoreValue()}
+                amount={getSecondStoreValue(game)}
             />
             <PitsBoard
-                firstPlayerPits={game.getFirstPlayerPits()}
-                secondPlayerPits={game.getSecondPlayerPits()}
+                firstPlayerPits={getFirstPlayerPits(game)}
+                secondPlayerPits={getSecondPlayerPits(game)}
             />
             <Store
                 isFirstPlayer={true}
-                amount={game.getSecondStoreValue()}
+                amount={getFirstStoreValue(game)}
             />
         </div>
     )

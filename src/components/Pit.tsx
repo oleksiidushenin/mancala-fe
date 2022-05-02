@@ -9,21 +9,22 @@ const Pit = (props: { index: number, amount: number, isFirstPlayer: boolean }) =
     const isActive = props.isFirstPlayer === gameContext.game.firstPlayerTurn && props.amount > 0;
 
     const selectPitHandler = () => {
-        if (props.isFirstPlayer !== gameContext.game.firstPlayerTurn) {
+        if (props.isFirstPlayer !== gameContext.game.firstPlayerTurn || gameContext.game.board[props.index] === 0) {
             return;
         }
 
         try {
             gameContext.selectPit(props.index);
         } catch (error: any) {
-            console.log("Game error")
             errorContext.setGameException(true, error.message);
         }
     }
 
     const pitStyles = [
         styles.pit,
-        props.isFirstPlayer ? styles.firstPlayer : styles.secondPlayer,
+        isActive
+            ? (props.isFirstPlayer ? styles.firstPlayer : styles.secondPlayer)
+            : (props.isFirstPlayer ? styles.firstPlayerWaiting : styles.secondPlayerWaiting),
         isActive ? styles.active : styles.passive
     ];
 

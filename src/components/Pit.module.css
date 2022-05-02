@@ -10,15 +10,39 @@
 }
 
 .pit.firstPlayer {
-    background-color: red;
+    background-color:#282828;
+    color: #dfee06;
+    font-size: 2rem;
+    border-color: #dfee06;
+    box-shadow: 0 1px 8px #dfee06;
+}
+
+.firstPlayerWaiting {
+    background-color:#282828;
+    color: #dfee06;
+    font-size: 2rem;
+    border-color: #282828;
+    box-shadow: 0 1px 8px #282828;
 }
 
 .pit.secondPlayer {
-    background-color: darkcyan;
+    background-color: #dfee06;
+    color: #282828;
+    font-size: 2rem;
+    border-color: #282828;
+    box-shadow: 0 1px 8px #282828;
+}
+
+.secondPlayerWaiting {
+    background-color:#dfee06;
+    color: #282828;
+    font-size: 2rem;
+    border-color: #dfee06;
+    box-shadow: 0 1px 8px #dfee06;
 }
 
 .pit.active:hover {
-    background-color: blanchedalmond;
+    background-color: #6e6e6e;
     cursor: pointer;
 }
 
