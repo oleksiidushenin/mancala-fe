@@ -53,6 +53,7 @@ export const selectPit = (index: number, game: Game): Game => {
     // todo validation
 
     const seedCount = newGame.board[index];
+    newGame.board[index] = 0;
     let targetPit = index + 1;
     for (let i = 0; i < seedCount; i++) {
         if (targetPit > secondStoreIndex) {
@@ -61,7 +62,7 @@ export const selectPit = (index: number, game: Game): Game => {
 
         newGame.board[targetPit++]++;
     }
-    newGame.board[index] = 0;
+
 
     if (isEnd(newGame)) {
         newGame.finished = true;

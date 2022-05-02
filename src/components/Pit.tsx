@@ -6,7 +6,9 @@ import {ErrorContext} from "../store/ErrorProvider";
 const Pit = (props: { index: number, amount: number, isFirstPlayer: boolean }) => {
     const gameContext = useContext(GameContext);
     const errorContext = useContext(ErrorContext);
-    const isActive = props.isFirstPlayer === gameContext.game.firstPlayerTurn && props.amount > 0;
+    const isActive = !gameContext.game.finished
+        && props.isFirstPlayer === gameContext.game.firstPlayerTurn
+        && props.amount > 0;
 
     const selectPitHandler = () => {
         if (props.isFirstPlayer !== gameContext.game.firstPlayerTurn || gameContext.game.board[props.index] === 0) {
